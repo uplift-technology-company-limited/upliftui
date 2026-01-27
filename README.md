@@ -22,7 +22,7 @@ bun add @upliftui/ui
 ### shadcn Registry
 
 ```bash
-bunx shadcn@latest add button --registry https://upliftui.dev/registry.json
+bunx shadcn@latest add button --registry https://ui.uplifttech.dev/registry.json
 ```
 
 ## Usage

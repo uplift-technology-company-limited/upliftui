@@ -60,7 +60,7 @@ Add the UpliftUI registry to your `components.json`:
 {
   "registries": {
     "uplift": {
-      "url": "https://upliftui.dev/registry.json"
+      "url": "https://ui.uplifttech.dev/registry.json"
     }
   }
 }
@@ -76,7 +76,7 @@ bunx shadcn@latest add button -r uplift
 bunx shadcn@latest add button card dialog -r uplift
 
 # Or use the full URL
-bunx shadcn@latest add button --registry https://upliftui.dev/registry.json
+bunx shadcn@latest add button --registry https://ui.uplifttech.dev/registry.json
 ```
 
 ### Magic UI Components

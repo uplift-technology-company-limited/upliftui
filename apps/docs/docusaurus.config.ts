@@ -11,10 +11,10 @@ const config: Config = {
     v4: true,
   },
 
-  url: "https://upliftui.dev",
+  url: "https://ui-docs.uplifttech.dev",
   baseUrl: "/",
 
-  organizationName: "upliftui",
+  organizationName: "uplift-technology-company-limited",
   projectName: "upliftui",
 
   onBrokenLinks: "throw",
@@ -32,7 +32,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: "./sidebars.ts",
-          editUrl: "https://github.com/upliftui/upliftui/tree/main/apps/docs/",
+          editUrl: "https://github.com/uplift-technology-company-limited/upliftui/tree/main/apps/docs/",
         },
         blog: false,
         theme: {
@@ -67,7 +67,7 @@ const config: Config = {
           label: "Components",
         },
         {
-          href: "https://github.com/upliftui/upliftui",
+          href: "https://github.com/uplift-technology-company-limited/upliftui",
           label: "GitHub",
           position: "right",
         },
@@ -107,7 +107,7 @@ const config: Config = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/upliftui/upliftui",
+              href: "https://github.com/uplift-technology-company-limited/upliftui",
             },
             {
               label: "NPM",

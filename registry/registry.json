@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "uplift-ui",
-  "homepage": "https://upliftui.dev",
+  "homepage": "https://ui-docs.uplifttech.dev",
   "items": [
     {
       "name": "aspect-ratio",

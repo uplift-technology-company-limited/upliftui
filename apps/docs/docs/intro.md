@@ -48,7 +48,7 @@ bun add @upliftui/ui
 Add individual components directly to your project:
 
 ```bash
-bunx shadcn@latest add button --registry https://upliftui.dev/registry.json
+bunx shadcn@latest add button --registry https://ui.uplifttech.dev/registry.json
 ```
 
 ## Quick Start
