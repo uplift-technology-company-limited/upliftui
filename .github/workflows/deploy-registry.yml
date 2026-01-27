@@ -35,14 +35,14 @@ jobs:
 
       - name: Sync to S3
         run: |
-          aws s3 sync registry/ s3://upliftui/ \
+          aws s3 sync registry/ s3://ui.uplifttech.dev/ \
             --delete \
             --cache-control "max-age=3600" \
             --content-type "application/json" \
             --exclude "*" \
             --include "*.json"
 
-          aws s3 sync registry/styles/ s3://upliftui/styles/ \
+          aws s3 sync registry/styles/ s3://ui.uplifttech.dev/styles/ \
             --delete \
             --cache-control "max-age=3600" \
             --content-type "text/css" \
