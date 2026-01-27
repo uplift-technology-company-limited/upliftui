@@ -1,0 +1,14 @@
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Placeholder for shadcn CSS variables */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

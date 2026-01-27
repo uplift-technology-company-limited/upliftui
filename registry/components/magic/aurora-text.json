@@ -1,0 +1,14 @@
+{
+  "name": "aurora-text",
+  "type": "registry:ui",
+  "title": "Aurora Text",
+  "description": "Aurora Text component (Magic UI)",
+  "files": [
+    {
+      "path": "components/magic/aurora-text.tsx",
+      "content": "\"use client\";\n\nimport { memo, useMemo, useEffect } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ninterface AuroraTextProps {\n  children: React.ReactNode;\n  className?: string;\n  colors?: string[];\n  speed?: number;\n}\n\n// Inject global keyframes once\nconst KEYFRAMES_ID = \"aurora-keyframes\";\n\nfunction ensureKeyframes() {\n  if (typeof document === \"undefined\") return;\n  if (document.getElementById(KEYFRAMES_ID)) return;\n\n  const style = document.createElement(\"style\");\n  style.id = KEYFRAMES_ID;\n  style.textContent = `\n    @keyframes aurora {\n      0%, 100% {\n        background-position: 0% 50%;\n      }\n      50% {\n        background-position: 100% 50%;\n      }\n    }\n  `;\n  document.head.appendChild(style);\n}\n\nexport const AuroraText = memo(function AuroraText({\n  children,\n  className,\n  colors = [\"#FF0080\", \"#7928CA\", \"#0070F3\", \"#38bdf8\"],\n  speed = 3,\n}: AuroraTextProps) {\n  useEffect(() => {\n    ensureKeyframes();\n  }, []);\n\n  const gradientStyle = useMemo(() => {\n    const gradientColors = colors.join(\", \");\n    return {\n      backgroundImage: `linear-gradient(135deg, ${gradientColors}, ${colors[0]})`,\n      backgroundSize: \"400% 400%\",\n      animation: `aurora ${speed}s ease infinite`,\n    };\n  }, [colors, speed]);\n\n  return (\n    <span\n      className={cn(\"bg-clip-text text-transparent\", className)}\n      style={gradientStyle}\n    >\n      {children}\n    </span>\n  );\n});\n",
+      "type": "registry:ui",
+      "target": "components/ui/aurora-text.tsx"
+    }
+  ]
+}

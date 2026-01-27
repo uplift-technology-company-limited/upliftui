@@ -1,0 +1,14 @@
+{
+  "name": "section",
+  "type": "registry:ui",
+  "title": "Section",
+  "description": "Section component",
+  "files": [
+    {
+      "path": "components/ui/section.tsx",
+      "content": "import React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ninterface SectionProps {\n  children: React.ReactNode;\n  className?: string;\n  id?: string;\n  ref?: React.Ref<HTMLDivElement>;\n}\n\nexport const Section = ({ children, className, id, ref }: SectionProps) => {\n  return (\n    <section\n      ref={ref}\n      id={id}\n      className={cn(\n        \"relative z-10 px-6 py-24 md:py-12 w-full mx-auto\",\n        className,\n      )}\n    >\n      {children}\n    </section>\n  );\n};\n\nSection.displayName = \"Section\";\n",
+      "type": "registry:ui",
+      "target": "components/ui/section.tsx"
+    }
+  ]
+}

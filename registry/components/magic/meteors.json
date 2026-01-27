@@ -1,0 +1,14 @@
+{
+  "name": "meteors",
+  "type": "registry:ui",
+  "title": "Meteors",
+  "description": "Meteors component (Magic UI)",
+  "files": [
+    {
+      "path": "components/magic/meteors.tsx",
+      "content": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\ninterface MeteorsProps {\n  number?: number;\n  className?: string;\n}\n\nexport const Meteors = ({ number = 20, className }: MeteorsProps) => {\n  const [meteors, setMeteors] = useState<\n    Array<{ id: number; style: React.CSSProperties }>\n  >([]);\n\n  useEffect(() => {\n    const styles = [...new Array(number)].map((_, idx) => ({\n      id: idx,\n      style: {\n        top: `${Math.random() * 50 - 20}%`, // -20% to 30% (spread across top area)\n        left: `${Math.random() * 80 + 50}%`, // 50% to 130% (start from right side, some off-screen)\n        animationDelay: `${Math.random() * 8}s`,\n        animationDuration: `${Math.random() * 6 + 4}s`, // 4-10s\n      } as React.CSSProperties,\n    }));\n    setMeteors(styles);\n  }, [number]);\n\n  return (\n    <div className=\"absolute inset-0 overflow-hidden pointer-events-none z-[1]\">\n      {meteors.map((meteor) => (\n        <span\n          key={meteor.id}\n          style={meteor.style}\n          className={cn(\n            \"absolute h-1 w-1 animate-meteor rounded-full\",\n            \"bg-slate-700 dark:bg-white\",\n            \"shadow-[0_0_6px_2px_rgba(100,116,139,0.6)] dark:shadow-[0_0_6px_2px_rgba(255,255,255,0.6)]\",\n            className,\n          )}\n        >\n          {/* Meteor Tail - pointing opposite of movement direction */}\n          <div className=\"pointer-events-none absolute top-1/2 left-full h-[2px] w-[80px] -translate-y-1/2 bg-gradient-to-r from-slate-500 to-transparent dark:from-white/80 dark:to-transparent\" />\n        </span>\n      ))}\n    </div>\n  );\n};\n",
+      "type": "registry:ui",
+      "target": "components/ui/meteors.tsx"
+    }
+  ]
+}

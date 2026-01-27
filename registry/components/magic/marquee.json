@@ -1,0 +1,14 @@
+{
+  "name": "marquee",
+  "type": "registry:ui",
+  "title": "Marquee",
+  "description": "Marquee component (Magic UI)",
+  "files": [
+    {
+      "path": "components/magic/marquee.tsx",
+      "content": "\"use client\";\n\nimport { useState, type CSSProperties } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ninterface MarqueeProps {\n  className?: string;\n  reverse?: boolean;\n  pauseOnHover?: boolean;\n  children?: React.ReactNode;\n  vertical?: boolean;\n  repeat?: number;\n  duration?: string;\n  gap?: string;\n}\n\nexport function Marquee({\n  className,\n  reverse,\n  pauseOnHover = false,\n  children,\n  vertical = false,\n  repeat = 4,\n  duration = \"40s\",\n  gap = \"1rem\",\n}: MarqueeProps) {\n  const [isPaused, setIsPaused] = useState(false);\n\n  return (\n    <div\n      style={{ \"--gap\": gap } as CSSProperties}\n      className={cn(\n        \"flex overflow-hidden p-2 [gap:var(--gap)]\",\n        {\n          \"flex-row\": !vertical,\n          \"flex-col\": vertical,\n        },\n        className,\n      )}\n      onMouseEnter={() => pauseOnHover && setIsPaused(true)}\n      onMouseLeave={() => pauseOnHover && setIsPaused(false)}\n    >\n      {Array(repeat)\n        .fill(0)\n        .map((_, i) => (\n          <div\n            key={i}\n            className={cn(\"flex shrink-0 justify-around [gap:var(--gap)]\", {\n              \"flex-row\": !vertical,\n              \"flex-col\": vertical,\n              \"[animation-direction:reverse]\": reverse,\n            })}\n            style={{\n              animation: `${vertical ? \"marquee-vertical\" : \"marquee\"} ${duration} linear infinite`,\n              animationPlayState: isPaused ? \"paused\" : \"running\",\n            }}\n          >\n            {children}\n          </div>\n        ))}\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/ui/marquee.tsx"
+    }
+  ]
+}
