@@ -22,7 +22,7 @@ bun add @upliftui/ui
 ### shadcn Registry
 
 ```bash
-bunx shadcn@latest add button --registry https://ui.uplifttech.dev/registry.json
+bunx shadcn@latest add button --registry http://ui.uplifttech.dev/registry.json
 ```
 
 ## Usage
@@ -55,7 +55,7 @@ AnimatedBeam, AuroraText, BlurFade, BorderBeam, Globe, InfiniteMovingCards, Marq
 
 ## Documentation
 
-Visit [https://upliftui.dev](https://upliftui.dev) for full documentation.
+Visit [https://ui-docs.uplifttech.dev](https://ui-docs.uplifttech.dev) for full documentation.
 
 ## Development
 
